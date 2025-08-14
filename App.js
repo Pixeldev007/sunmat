@@ -79,8 +79,12 @@ function App() {
           <div className="bg-blue-900 text-white rounded-2xl px-4 sm:px-6 py-4 sm:py-5 text-center shadow-lg">
             <div className="text-lg sm:text-xl md:text-2xl font-bold">தொடர்பு எண்கள்</div>
             <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 text-xl sm:text-2xl md:text-3xl font-extrabold">
-              <div>+91 98765 43210</div>
-              <div>+91 91234 56789</div>
+              <div>+91 93420 97057</div>
+              <div>+91 63793 99175</div>
+              <div>+91 81486 53302</div>
+              <div>+91 99942 75366</div>
+              <div>+91 98422 73093</div>
+              <div>+91 97917 81651</div>
             </div>
           </div>
         </div>
