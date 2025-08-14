@@ -52,6 +52,16 @@ function App() {
           விரைவில் திருமணம் நடத்த வேண்டுமா?
         </p>
 
+        {/* Image between heading and description */}
+        <div className="mt-4 sm:mt-5 flex justify-center">
+          <img 
+            src="./images/image1.png" 
+            alt="Matrimony Service" 
+            className="rounded-lg shadow-md" 
+            style={{ maxHeight: "200px", maxWidth: "80%" }} 
+          />
+        </div>
+
         {/* Description like matrimonial ad */}
         <p
           className="mt-5 sm:mt-6 text-center mx-auto max-w-2xl"
@@ -60,11 +70,9 @@ function App() {
             fontSize: "clamp(14px, 2.8vw, 18px)",
           }}
         >
-          உங்கள் கனவு திருமணத்தை சிறப்பாகவும் சுருக்கமாகவும் நடத்த உதவ தயாராக உள்ளோம்! 
-          இடம் தேர்வு முதல் அலங்காரம், நிச்சயதார்த்தம் முதல் மாப்பிள்ளை அழைப்பிதழ் வரை —
-          அனைத்தும் ஒரே இடத்தில், உங்கள் பட்ஜெட்டுக்கு ஏற்ப. உங்கள் விவரங்களை வழங்குங்கள்; 
-          எங்கள் குழு உடனடியாக தொடர்பு கொள்ளும்.
-        </p>
+          பெண் வீட்டாரிடம் பேசி உங்களுக்கு பொடுத்தமான 10 வரன் விபரங்கள் போன் நெம்பருடன் உங்கள் முகவரிக்கு தபால் மூலம் டெலிவரி செய்யப்படும். 
+          கீழே உள்ள விபரங்களை நிறப்பவும். 
+          தபால் பெற்ற பின்பு தபால்காரரிடம் ரூ 500 [COD] செலுத்தினால்  போதும்.         </p>
 
         {/* Contacts panel */}
         <div className="mt-6 sm:mt-8">
