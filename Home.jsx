@@ -78,14 +78,14 @@ export default function Home() {
         <div className="mt-6 sm:mt-8">
           <div className="bg-blue-900 text-white rounded-2xl px-4 sm:px-6 py-4 sm:py-5 text-center shadow-lg">
             <div className="text-lg sm:text-xl md:text-2xl font-bold">தொடர்பு எண்கள்</div>
-            {/* Mobile: 3 columns; Tablet/Desktop: revert to 2 columns */}
-            <div className="mt-2 grid grid-cols-3 sm:grid-cols-2 gap-2 sm:gap-3 text-lg sm:text-2xl md:text-3xl font-extrabold">
-              <div>+91 93420 97057</div>
-              <div>+91 63793 99175</div>
-              <div>+91 81486 53302</div>
-              <div>+91 99942 75366</div>
-              <div>+91 98422 73093</div>
-              <div>+91 97917 81651</div>
+            {/* Mobile: 2 columns x 3 rows; Tablet/Desktop: 2 columns */}
+            <div className="mt-2 grid grid-cols-2 sm:grid-cols-2 gap-2 sm:gap-3 text-sm sm:text-xl md:text-2xl font-extrabold">
+              <div className="whitespace-nowrap">+91 93420 97057</div>
+              <div className="whitespace-nowrap">+91 63793 99175</div>
+              <div className="whitespace-nowrap">+91 81486 53302</div>
+              <div className="whitespace-nowrap">+91 99942 75366</div>
+              <div className="whitespace-nowrap">+91 98422 73093</div>
+              <div className="whitespace-nowrap">+91 97917 81651</div>
             </div>
           </div>
         </div>

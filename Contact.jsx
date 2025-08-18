@@ -29,12 +29,12 @@ export default function Contact() {
         <div className="mt-6 bg-[#1f3b8a] text-white rounded-xl p-5 md:p-6 shadow-md">
           <div className="text-white/90 font-semibold">Phone</div>
           <div className="mt-2 space-y-1">
-            <div className="text-xl md:text-2xl font-extrabold">+91 93420 97057</div>
-            <div className="text-xl md:text-2xl font-extrabold">+91 63793 99175</div>
-            <div className="text-xl md:text-2xl font-extrabold">+91 81486 53302</div>
-            <div className="text-xl md:text-2xl font-extrabold">+91 99942 75366</div>
-            <div className="text-xl md:text-2xl font-extrabold">+91 98422 73093</div>
-            <div className="text-xl md:text-2xl font-extrabold">+91 97917 81651</div>
+            <a href="tel:+919342097057" className="block text-xl md:text-2xl font-extrabold hover:underline" aria-label="Call +91 93420 97057">+91 93420 97057</a>
+            <a href="tel:+916379399175" className="block text-xl md:text-2xl font-extrabold hover:underline" aria-label="Call +91 63793 99175">+91 63793 99175</a>
+            <a href="tel:+918148653302" className="block text-xl md:text-2xl font-extrabold hover:underline" aria-label="Call +91 81486 53302">+91 81486 53302</a>
+            <a href="tel:+919994275366" className="block text-xl md:text-2xl font-extrabold hover:underline" aria-label="Call +91 99942 75366">+91 99942 75366</a>
+            <a href="tel:+919842273093" className="block text-xl md:text-2xl font-extrabold hover:underline" aria-label="Call +91 98422 73093">+91 98422 73093</a>
+            <a href="tel:+919791781651" className="block text-xl md:text-2xl font-extrabold hover:underline" aria-label="Call +91 97917 81651">+91 97917 81651</a>
           </div>
         </div>
 
