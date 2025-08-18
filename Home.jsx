@@ -78,7 +78,8 @@ export default function Home() {
         <div className="mt-6 sm:mt-8">
           <div className="bg-blue-900 text-white rounded-2xl px-4 sm:px-6 py-4 sm:py-5 text-center shadow-lg">
             <div className="text-lg sm:text-xl md:text-2xl font-bold">தொடர்பு எண்கள்</div>
-            <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 text-xl sm:text-2xl md:text-3xl font-extrabold">
+            {/* Mobile: 3 columns; Tablet/Desktop: revert to 2 columns */}
+            <div className="mt-2 grid grid-cols-3 sm:grid-cols-2 gap-2 sm:gap-3 text-lg sm:text-2xl md:text-3xl font-extrabold">
               <div>+91 93420 97057</div>
               <div>+91 63793 99175</div>
               <div>+91 81486 53302</div>
@@ -109,9 +110,18 @@ export default function Home() {
           </button>
         </div>
       </div>
-      {/* Full-width nav buttons below the card */}
-      <div className="w-full max-w-3xl mx-auto mt-4 px-1 sm:px-0">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      {/* Mobile-only: simple underlined links */}
+      <div className="w-full max-w-3xl mx-auto mt-4 px-1 sm:px-0 sm:hidden">
+        <div className="flex justify-center items-center gap-6 flex-wrap text-blue-800 font-semibold">
+          <Link to="/privacy" className="underline hover:text-blue-900">Privacy</Link>
+          <Link to="/terms" className="underline hover:text-blue-900">Terms & Conditions</Link>
+          <Link to="/contact" className="underline hover:text-blue-900">Contact</Link>
+        </div>
+      </div>
+
+      {/* Tablet/Desktop: keep boxed buttons */}
+      <div className="w-full max-w-3xl mx-auto mt-4 px-1 hidden sm:block">
+        <div className="grid grid-cols-3 gap-3">
           <Link to="/privacy" className="w-full text-center px-4 py-3 rounded-xl bg-white text-blue-800 font-semibold border border-blue-200 hover:bg-blue-50 shadow-sm">
             Privacy
           </Link>
