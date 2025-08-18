@@ -102,14 +102,12 @@ function App() {
             onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-1px)"; }}
             onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
           >
-            Google Form பூர்த்தி செய்யவும்
+            ORDER NOW
           </button>
         </div>
 
         {/* Small note */}
-        <p className="text-center text-sm text-gray-700 mt-4">
-          தமிழ் எழுத்துரு: Noto Sans Tamil · பக்கம் கைப்பேசி மற்றும் கணினி இரண்டுக்கும் பொருந்தும்
-        </p>
+        
       </div>
     </div>
   );
