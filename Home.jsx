@@ -30,6 +30,14 @@ export default function Home() {
       }}
     >
       <div className="w-full max-w-3xl bg-white/70 backdrop-blur-sm rounded-2xl shadow-2xl border border-white/60 p-5 sm:p-8 md:p-10">
+        <div className="flex justify-center">
+          <img
+            src="./images/logo.png"
+            alt="Sun Matrimony Logo"
+            className="h-14 w-14 sm:h-16 sm:w-16 object-contain drop-shadow"
+            style={{ filter: "drop-shadow(0 1px 0 #fff)" }}
+          />
+        </div>
         <h1
           className="text-center font-black tracking-tight"
           style={{

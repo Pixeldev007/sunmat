@@ -9,11 +9,11 @@ export default function Terms() {
     }}>
       <div className="w-full max-w-3xl bg-amber-50 rounded-2xl shadow-2xl border border-amber-100 p-6 md:p-10">
         <div className="flex justify-between items-start">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-blue-900">Terms & Conditions</h1>
           <button onClick={() => navigate(-1)} className="text-sm text-blue-700 hover:underline font-semibold">← Back to Home</button>
         </div>
-        <p className="mt-2 text-gray-700">Please read these terms carefully before using our services.</p>
         <p className="mt-4 text-gray-800 leading-relaxed">
-          Accessing, registering, or using Sun Matrimony’s website, mobile application, or related services signifies that the user acknowledges, understands, and agrees to be bound by the terms and conditions outlined herein, forming a legally binding agreement between the individual and Sun Matrimony.
+          Accessing, registering, or using Sun Matrimony's website, mobile application, or related services signifies that the user acknowledges, understands, and agrees to be bound by the terms and conditions outlined herein, forming a legally binding agreement between the individual and Sun Matrimony.
         </p>
         <p className="mt-4 text-gray-800 leading-relaxed">
           The platform is intended solely for individuals who have attained the legal marriageable age as per the laws of India (currently 18 years for women and 21 years for men), and registration constitutes a declaration that these criteria are met and that all information provided is truthful, accurate, and complete.
