@@ -114,7 +114,7 @@ export default function Home() {
               e.currentTarget.style.transform = "translateY(0)";
             }}
           >
-            ORDER NOW
+            REGISTER
           </button>
         </div>
       </div>
