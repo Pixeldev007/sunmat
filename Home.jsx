@@ -48,6 +48,11 @@ export default function Home() {
           }}
         >
           Sun Matrimony
+          <br />
+          <span style={{ color: "#1e40af", fontSize: "clamp(lam, 4.5vw, 36px)", }}>சன் மேட்ரிமோணி</span>
+          <br />
+          <span style={{ color: "#b91c1c", fontSize: "clamp(16px, 4vw, 32px)", }}>[அனைத்து சமூகத்திற்கும்
+          ]</span>
         </h1>
 
         <p
@@ -55,32 +60,61 @@ export default function Home() {
           style={{
             color: "#b91c1c",
             ...whiteOutline,
-            fontSize: "clamp(18px, 4.5vw, 36px)",
+            fontSize: "clamp(16px, 4vw, 32px)",
             lineHeight: 1.2,
           }}
         >
-          விரைவில் திருமணம் நடத்த வேண்டுமா?
+          விரைவில் திருமணம் நடைபெற வேண்டுமா?
+
         </p>
 
-        <div className="mt-4 sm:mt-5 flex justify-center">
+        <div className="mt-4 sm:mt-5 flex justify-center gap-4">
           <img
             src="./images/image1.png"
             alt="Matrimony Service"
             className="rounded-lg shadow-md"
-            style={{ maxHeight: "200px", maxWidth: "80%" }}
+            style={{ maxHeight: "200px", maxWidth: "45%" }}
           />
+          <img
+            src="./images/image2.png"
+            alt="Matrimony Service 2"
+            className="rounded-lg shadow-md"
+            style={{ maxHeight: "200px", maxWidth: "45%" }}
+          />
+        </div>
+        
+        <div className="mt-7 sm:mt-9 flex justify-center">
+          <button
+            onClick={openForm}
+            className="rounded-full bg-pink-600 text-white font-extrabold shadow-xl hover:bg-pink-700 active:bg-pink-800 focus:outline-none focus:ring-4 focus:ring-pink-300 transition-transform duration-150"
+            style={{
+              padding: "14px 22px",
+              fontSize: "clamp(16px, 4vw, 22px)",
+              transform: "translateY(0)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-1px)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+            }}
+          >
+            REGISTER / பதிவு செய்
+          </button>
         </div>
 
         <p
           className="mt-5 sm:mt-6 text-center mx-auto max-w-2xl"
           style={{
             color: "#6b0f1a",
-            fontSize: "clamp(14px, 2.8vw, 18px)",
+            fontSize: "clamp(16px, 3vw, 20px)",
+            fontWeight : "bold",
           }}
         >
-          பெண் வீட்டாரிடம் பேசி உங்களுக்கு பொருத்தமான 10 வரன் விபரங்கள் போன் நெம்பருடன் உங்கள் முகவரிக்கு தபால் மூலம் டெலிவரி செய்யப்படும்.
-          கீழே உள்ள விபரங்களை நிறப்பவும்.
-          தபால் பெற்ற பின்பு தபால்காரரிடம் ரூ 500 [COD] செலுத்தினால்  போதும்.
+          1.உங்கருக்கு பொருத்தமான வரன்களை தேர்ந்தெடுத்து பெண் வீட்டாரிடம் பேசி, 
+          மொருத்தமான 10 வரன் விபரங்களை போன் நெம்பருடன் தபால் மூலம் அனுப்புகிறோம்.
+          <br />
+          2.வரன்களை தபாலில் பெற்றபின் தபால்காரரிடம் ரூ 500 [COD] செலுத்தினால் போதும்.
         </p>
 
         <div className="mt-6 sm:mt-8">
@@ -98,25 +132,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-7 sm:mt-9 flex justify-center">
-          <button
-            onClick={openForm}
-            className="rounded-full bg-pink-600 text-white font-extrabold shadow-xl hover:bg-pink-700 active:bg-pink-800 focus:outline-none focus:ring-4 focus:ring-pink-300 transition-transform duration-150"
-            style={{
-              padding: "14px 22px",
-              fontSize: "clamp(16px, 4vw, 22px)",
-              transform: "translateY(0)",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-1px)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-            }}
-          >
-            REGISTER
-          </button>
-        </div>
+        
       </div>
       {/* Mobile-only: simple underlined links */}
       <div className="w-full max-w-3xl mx-auto mt-4 px-1 sm:px-0 sm:hidden">

@@ -45,7 +45,7 @@ function App() {
           style={{
             color: "#b91c1c", // red
             ...whiteOutline,
-            fontSize: "clamp(18px, 4.5vw, 36px)",
+            fontSize: "clamp(16px, 3.5vw, 34px)",
             lineHeight: 1.2,
           }}
         >
