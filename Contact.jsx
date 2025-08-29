@@ -48,7 +48,7 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="text-blue-700 font-semibold hover:underline"
             >
-              http://www.sunmat.in
+              https://sunmat.in/
             </a>
           </div>
         </div>
