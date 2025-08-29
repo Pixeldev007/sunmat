@@ -43,7 +43,7 @@ export default function Contact() {
           <div>
             <div className="text-gray-700 font-semibold">Website</div>
             <a
-              href="https://sunmatrimony.in"
+              href="https://sunmat.in/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-700 font-semibold hover:underline"
