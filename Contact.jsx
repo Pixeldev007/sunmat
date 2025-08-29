@@ -48,7 +48,7 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="text-blue-700 font-semibold hover:underline"
             >
-              sunmatrimony.in
+              http://www.sunmat.in
             </a>
           </div>
         </div>
