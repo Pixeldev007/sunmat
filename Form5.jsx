@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdJ1Z_3ro-65crWt3o9sP-E613A31IhB_Rgimg0wKgVQ89ZRQ/viewform?usp=dialog";
+const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf0t5gkg8pvl29bgnXEZm2w1N7jTKfR__eIXAw1ySlBj2iPCw/viewform?usp=dialog";
 
-export default function Home() {
+export default function Form5() {
   const openForm = () => {
     window.open(FORM_URL, "_blank", "noopener,noreferrer");
   };
@@ -32,7 +32,7 @@ export default function Home() {
       <div className="w-full max-w-3xl bg-white/70 backdrop-blur-sm rounded-2xl shadow-2xl border border-white/60 p-5 sm:p-8 md:p-10">
         <div className="flex justify-center">
           <img
-            src="./images/logo.png"
+            src="/images/logo.png"
             alt="Sun Matrimony Logo"
             className="h-14 w-14 sm:h-16 sm:w-16 object-contain drop-shadow"
             style={{ filter: "drop-shadow(0 1px 0 #fff)" }}
@@ -49,9 +49,9 @@ export default function Home() {
         >
           Sun Matrimony
           <br />
-          <span style={{ color: "#1e40af", fontSize: "clamp(lam, 4.5vw, 36px)", }}>சன் மேட்ரிமோணி</span>
+          <span style={{ color: "#1e40af", fontSize: "clamp(lam, 4.5vw, 36px)" }}>சன் மேட்ரிமோணி</span>
           <br />
-          <span style={{ color: "#b91c1c", fontSize: "clamp(16px, 4vw, 32px)", }}>[அனைத்து சமூகத்திற்கும்]</span>
+          <span style={{ color: "#b91c1c", fontSize: "clamp(16px, 4vw, 32px)" }}>[அனைத்து சமூகத்திற்கும்]</span>
         </h1>
 
         <p
@@ -64,18 +64,17 @@ export default function Home() {
           }}
         >
           விரைவில் திருமணம் நடைபெற வேண்டுமா?
-
         </p>
 
         <div className="mt-4 sm:mt-5 flex justify-center gap-4">
           <img
-            src="./images/image1.png"
+            src="/images/image1.png"
             alt="Matrimony Service"
             className="rounded-lg shadow-md"
             style={{ maxHeight: "200px", maxWidth: "45%" }}
           />
           <img
-            src="./images/image2.png"
+            src="/images/image2.png"
             alt="Matrimony Service 2"
             className="rounded-lg shadow-md"
             style={{ maxHeight: "200px", maxWidth: "45%" }}
@@ -120,7 +119,6 @@ export default function Home() {
         <div className="mt-6 sm:mt-8">
           <div className="bg-blue-900 text-white rounded-2xl px-4 sm:px-6 py-4 sm:py-5 text-center shadow-lg">
             <div className="text-lg sm:text-xl md:text-2xl font-bold">தொடர்பு எண்கள்</div>
-            {/* Mobile: 2 columns x 3 rows; Tablet/Desktop: 2 columns */}
             <div className="mt-2 grid grid-cols-2 sm:grid-cols-2 gap-2 sm:gap-3 text-sm sm:text-xl md:text-2xl font-extrabold">
               <div className="whitespace-nowrap">+91 93420 97057</div>
               <div className="whitespace-nowrap">+91 63793 99175</div>
@@ -131,9 +129,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        
       </div>
+      
       {/* Mobile-only: simple underlined links */}
       <div className="w-full max-w-3xl mx-auto mt-4 px-1 sm:px-0 sm:hidden">
         <div className="flex justify-center items-center gap-6 flex-wrap text-blue-800 font-semibold">

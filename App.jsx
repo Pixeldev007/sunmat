@@ -4,6 +4,11 @@ import Home from "./Home.jsx";
 import Privacy from "./Privacy.jsx";
 import Terms from "./Terms.jsx";
 import Contact from "./Contact.jsx";
+import Form1 from "./Form1.jsx";
+import Form2 from "./Form2.jsx";
+import Form3 from "./Form3.jsx";
+import Form4 from "./Form4.jsx";
+import Form5 from "./Form5.jsx";
 
 function App() {
   return (
@@ -13,6 +18,11 @@ function App() {
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/form1" element={<Form1 />} />
+          <Route path="/form2" element={<Form2 />} />
+          <Route path="/form3" element={<Form3 />} />
+          <Route path="/form4" element={<Form4 />} />
+          <Route path="/form5" element={<Form5 />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/contact" element={<Contact />} />
