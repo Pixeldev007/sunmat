@@ -5,6 +5,17 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    open: true
+    open: true,
+    historyApiFallback: true
+  },
+  base: '/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true,
+    sourcemap: true
+  },
+  preview: {
+    port: 3000
   }
 })
