@@ -1,5 +1,5 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "./Home.jsx";
 import Privacy from "./Privacy.jsx";
 import Terms from "./Terms.jsx";
@@ -11,6 +11,14 @@ import Form4 from "./Form4.jsx";
 import Form5 from "./Form5.jsx";
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (window.fbq) {
+      window.fbq('track', 'PageView');
+    }
+  }, [location.pathname]);
+
   return (
     <div className="min-h-screen flex flex-col" style={{
       background: "linear-gradient(135deg, #ff8a00 0%, #ffc107 50%, #ffe082 100%)",

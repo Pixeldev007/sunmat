@@ -5,6 +5,9 @@ const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScmMcskhgWsTMgHQivvbH
 
 export default function Form3() {
   const openForm = () => {
+    if (window.fbq) {
+      window.fbq('trackCustom', 'RegisterCTAClick', { page: 'Form3' });
+    }
     window.open(FORM_URL, "_blank", "noopener,noreferrer");
   };
 
