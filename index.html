@@ -36,6 +36,12 @@
     /></noscript>
     <!-- End Meta Pixel Code (noscript) -->
     <div id="root"></div>
+    
+    <!-- Test button to manually fire a Meta Pixel Lead event (optional) -->
+    <div style="text-align:center; margin: 16px 0;">
+      <button onclick="window.fbq && fbq('track', 'Lead')" style="padding:8px 14px; border-radius:8px; background:#2563eb; color:#fff; font-weight:700;">Sign Up (Lead Test)</button>
+    </div>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

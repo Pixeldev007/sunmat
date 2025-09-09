@@ -6,6 +6,7 @@ const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSensOmsHn4N68jWXR6X38
 export default function Form4() {
   const openForm = () => {
     if (window.fbq) {
+      window.fbq('track', 'Lead');
       window.fbq('trackCustom', 'RegisterCTAClick', { page: 'Form4' });
     }
     window.open(FORM_URL, "_blank", "noopener,noreferrer");
