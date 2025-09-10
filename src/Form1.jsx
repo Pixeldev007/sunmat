@@ -101,7 +101,8 @@ export default function Form1() {
               e.currentTarget.style.transform = "translateY(0)";
             }}
           >
-            REGISTER / பதிவு செய்          </button>
+            REGISTER / பதிவு செய்          
+          </button>
         </div>
 
         <p
@@ -112,7 +113,7 @@ export default function Form1() {
             fontWeight : "bold",
           }}
         >
-          1.உங்கருக்கு பொருத்தமான வரன்களை தேர்ந்தெடுத்து வரன் வீட்டாரிடம் பேசி, 
+          1.உங்களுக்கு பொருத்தமான வரன்களை தேர்ந்தெடுத்து வரன் வீட்டாரிடம் பேசி, 
           பொருத்தமான 10 வரன் விபரங்களை போன் நம்பருடன்
           தபால் மூலம் அனுப்புகிறோம்.
           <br />
