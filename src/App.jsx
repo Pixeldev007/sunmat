@@ -14,7 +14,7 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    if (window.fbq) {
+    if (location.pathname !== '/form2' && window.fbq) {
       window.fbq('track', 'PageView');
     }
   }, [location.pathname]);
