@@ -8,6 +8,7 @@ export default function Form5() {
     if (window.fbq) {
       window.fbq('track', 'Lead');
       window.fbq('trackCustom', 'RegisterCTAClick', { page: 'Form5' });
+      window.fbq('trackCustom', 'RegisterCTAClick', { page: 'Form5' });
     }
     window.open(FORM_URL, "_blank", "noopener,noreferrer");
   };

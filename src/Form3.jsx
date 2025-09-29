@@ -8,6 +8,7 @@ export default function Form3() {
     if (window.fbq) {
       window.fbq('track', 'Lead');
       window.fbq('trackCustom', 'RegisterCTAClick', { page: 'Form3' });
+      window.fbq('track', 'Purchase', { value: 800.00, currency: 'INR' });
     }
     window.open(FORM_URL, "_blank", "noopener,noreferrer");
   };

@@ -5,6 +5,11 @@ const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSco1cEB4Kem39douDmw4z
 
 export default function Form2() {
   const openForm = () => {
+    if (window.fbq) {
+      window.fbq('track', 'Lead');
+      window.fbq('trackCustom', 'RegisterCTAClick', { page: 'Form2' });
+      window.fbq('track', 'Purchase', { value: 800.00, currency: 'INR' });
+    }
     window.open(FORM_URL, "_blank", "noopener,noreferrer");
   };
 
