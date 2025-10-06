@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSco1cEB4Kem39douDmw4zIg1318RlCm9P8ADVPT04r6GqYXuw/viewform?usp=sharing";
