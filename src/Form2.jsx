@@ -1,10 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaPhoneAlt, FaWhatsapp } from 'react-icons/fa';
 
 const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSco1cEB4Kem39douDmw4zIg1318RlCm9P8ADVPT04r6GqYXuw/viewform?usp=sharing";
 
 export default function Form2() {
+  const [phone, setPhone] = useState("");
+  const [qfLoading, setQfLoading] = useState(false);
+  const [qfMsg, setQfMsg] = useState("");
+
   useEffect(() => {
     // --- New Meta Pixel Code --- //
       const script = document.createElement('script');
@@ -42,6 +46,39 @@ export default function Form2() {
       }
     };
   }, []);
+
+  const submitQuickFill = async () => {
+    setQfMsg("");
+    const trimmed = phone.trim();
+    // Basic phone validation: allow +, digits, 10-15 length
+    const isValid = /^\+?[0-9]{10,15}$/.test(trimmed);
+    if (!isValid) {
+      setQfMsg("Please enter a valid phone number (10-15 digits).");
+      return;
+    }
+
+    try {
+      setQfLoading(true);
+      const res = await fetch('/.netlify/functions/quick-fill', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phone: trimmed, page: 'Form2' })
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.error || 'Request failed');
+      }
+      setQfMsg("Saved! We will contact you shortly.");
+      setPhone("");
+      if (window.fbq) {
+        window.fbq('trackCustom', 'QuickFill', { page: 'Form2' });
+      }
+    } catch (err) {
+      setQfMsg("Could not save right now. Please try again.");
+    } finally {
+      setQfLoading(false);
+    }
+  };
 
   const openForm = () => {
     if (window.fbq) {
@@ -126,6 +163,33 @@ export default function Form2() {
           />
         </div>
         
+        {/* Quick Fill: capture phone quickly before full form */}
+        <div className="mt-6 sm:mt-8 flex flex-col items-center">
+          <div className="w-full max-w-md flex flex-col sm:flex-row gap-3">
+            <input
+              type="tel"
+              inputMode="tel"
+              placeholder="Your phone number"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className="flex-1 rounded-xl border border-pink-300 px-4 py-3 text-base focus:outline-none focus:ring-4 focus:ring-pink-200"
+            />
+            <button
+              type="button"
+              onClick={submitQuickFill}
+              disabled={qfLoading}
+              className="rounded-full bg-pink-600 text-white font-extrabold shadow-xl hover:bg-pink-700 active:bg-pink-800 disabled:opacity-60 disabled:cursor-not-allowed px-6 py-3 transition-transform duration-150"
+            >
+              {qfLoading ? 'Saving…' : 'Quick Fill'}
+            </button>
+          </div>
+          {qfMsg && (
+            <div className="mt-2 text-sm font-semibold text-blue-900 bg-white/70 rounded-lg px-3 py-2">
+              {qfMsg}
+            </div>
+          )}
+        </div>
+
         <div className="mt-7 sm:mt-9 flex justify-center">
           <button
             onClick={openForm}
