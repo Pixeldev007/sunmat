@@ -5,14 +5,7 @@ const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSco1cEB4Kem39douDmw4z
 
 export default function Form2() {
   useEffect(() => {
-    // Check if the pixel script is already on the page to avoid duplicates
-    if (document.querySelector('script[src="https://connect.facebook.net/en_US/fbevents.js"]')) {
-      // If the base script exists, we just need to init the new pixel
-      if (window.fbq) {
-        window.fbq('init', '2082411969167840');
-      }
-    } else {
-      // If the base script doesn't exist, load it and init the pixel
+    // --- New Meta Pixel Code --- //
       const script = document.createElement('script');
       script.innerHTML = `
         !function(f,b,e,v,n,t,s)
@@ -24,9 +17,10 @@ export default function Form2() {
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '2082411969167840');
+      fbq('track', 'PageView');
+      fbq('trackSingle', '2082411969167840', 'Lead');
       `;
       document.head.appendChild(script);
-    }
 
     const noscript = document.createElement('noscript');
     const img = document.createElement('img');
@@ -37,8 +31,11 @@ export default function Form2() {
     noscript.appendChild(img);
     document.body.insertBefore(noscript, document.body.firstChild);
 
+    // Cleanup function to remove the script and noscript tags when the component unmounts
     return () => {
-      // Optional: Clean up the noscript tag when the component unmounts
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
       if (document.body.contains(noscript)) {
         document.body.removeChild(noscript);
       }
@@ -49,12 +46,8 @@ export default function Form2() {
     if (window.fbq) {
       // Keep existing tracking for the global pixel
       window.fbq('track', 'Lead');
-      window.fbq('trackSingle', '2082411969167840', 'Lead');
-      window.fbq('trackCustom', 'RegisterCTAClick', { page: 'Form2' });
+      window.fbq('trackCustom', 'RegisterCTAClick', { page: 'Form2', currency: 'INR', value: 800.00 });
       window.fbq('track', 'Purchase', { value: 800.00, currency: 'INR' });
-
-      // Add specific lead tracking for the new pixel
-      window.fbq('trackSingle', '2082411969167840', 'Lead');
     }
     window.open(FORM_URL, "_blank", "noopener,noreferrer");
   };

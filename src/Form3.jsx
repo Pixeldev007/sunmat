@@ -7,7 +7,7 @@ export default function Form3() {
   const openForm = () => {
     if (window.fbq) {
       window.fbq('track', 'Lead');
-      window.fbq('trackCustom', 'RegisterCTAClick', { page: 'Form3' });
+      window.fbq('trackCustom', 'RegisterCTAClick', { page: 'Form3', currency: 'INR', value: 800.00 });
       window.fbq('track', 'Purchase', { value: 800.00, currency: 'INR' });
     }
     window.open(FORM_URL, "_blank", "noopener,noreferrer");
