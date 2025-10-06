@@ -47,34 +47,39 @@ export default function Form2() {
     };
   }, []);
 
-  const submitQuickFill = async () => {
+  const savePhoneIfValid = async () => {
+    // Require a 10-digit number
     setQfMsg("");
-    const trimmed = phone.trim();
-    // Basic phone validation: allow +, digits, 10-15 length
-    const isValid = /^\+?[0-9]{10,15}$/.test(trimmed);
-    if (!isValid) {
-      setQfMsg("Please enter a valid phone number (10-15 digits).");
-      return;
+    const trimmed = (phone || "").trim();
+    if (!trimmed) {
+      setQfMsg("Please enter your 10-digit phone number.");
+      return false;
     }
-
+    const digits = trimmed.replace(/\D/g, "");
+    const isValid = /^\d{10}$/.test(digits);
+    if (!isValid) {
+      setQfMsg("Please enter a valid 10-digit phone number.");
+      return false;
+    }
     try {
       setQfLoading(true);
       const res = await fetch('/.netlify/functions/quick-fill', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ phone: trimmed, page: 'Form2' })
+        body: JSON.stringify({ phone: digits, page: 'Form2' })
       });
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));
         throw new Error(body.error || 'Request failed');
       }
       setQfMsg("Saved! We will contact you shortly.");
-      setPhone("");
       if (window.fbq) {
         window.fbq('trackCustom', 'QuickFill', { page: 'Form2' });
       }
+      return true;
     } catch (err) {
       setQfMsg("Could not save right now. Please try again.");
+      return false;
     } finally {
       setQfLoading(false);
     }
@@ -88,6 +93,16 @@ export default function Form2() {
       window.fbq('track', 'Purchase', { value: 800.00, currency: 'INR' });
     }
     window.open(FORM_URL, "_blank", "noopener,noreferrer");
+  };
+
+  const handleRegister = async () => {
+    // Save phone; if invalid/missing, do not proceed
+    const ok = await savePhoneIfValid();
+    if (!ok) return;
+    // After showing success, open the Google Form after 2 seconds
+    setTimeout(() => {
+      openForm();
+    }, 2000);
   };
 
   const whiteOutline = {
@@ -163,44 +178,37 @@ export default function Form2() {
           />
         </div>
         
-        {/* Quick Fill: capture phone quickly before full form */}
+        {/* Phone capture First. Register will submit this then open form */}
         <div className="mt-6 sm:mt-8 flex flex-col items-center">
-          <div className="w-full max-w-md flex flex-col sm:flex-row gap-3">
+          <div className="w-full max-w-md flex flex-col gap-3">
             <input
               type="tel"
               inputMode="tel"
-              placeholder="Your phone number"
+              placeholder="Please Enter Your Phone Number"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              className="flex-1 rounded-xl border border-pink-300 px-4 py-3 text-base focus:outline-none focus:ring-4 focus:ring-pink-200"
+              className="rounded-xl border border-pink-300 px-4 py-3 text-base focus:outline-none focus:ring-4 focus:ring-pink-200"
             />
-            <button
-              type="button"
-              onClick={submitQuickFill}
-              disabled={qfLoading}
-              className="rounded-full bg-pink-600 text-white font-extrabold shadow-xl hover:bg-pink-700 active:bg-pink-800 disabled:opacity-60 disabled:cursor-not-allowed px-6 py-3 transition-transform duration-150"
-            >
-              {qfLoading ? 'Saving…' : 'Quick Fill'}
-            </button>
+            {qfMsg && (
+              <div className="text-sm font-semibold text-blue-900 bg-white/70 rounded-lg px-3 py-2 text-center">
+                {qfMsg}
+              </div>
+            )}
           </div>
-          {qfMsg && (
-            <div className="mt-2 text-sm font-semibold text-blue-900 bg-white/70 rounded-lg px-3 py-2">
-              {qfMsg}
-            </div>
-          )}
         </div>
 
         <div className="mt-7 sm:mt-9 flex justify-center">
           <button
-            onClick={openForm}
-            className="rounded-full bg-pink-600 text-white font-extrabold shadow-xl hover:bg-pink-700 active:bg-pink-800 focus:outline-none focus:ring-4 focus:ring-pink-300 transition-transform duration-150"
+            onClick={handleRegister}
+            disabled={qfLoading}
+            className="rounded-full bg-pink-600 text-white font-extrabold shadow-xl hover:bg-pink-700 active:bg-pink-800 focus:outline-none focus:ring-4 focus:ring-pink-300 transition-transform duration-150 disabled:opacity-60 disabled:cursor-not-allowed"
             style={{
               padding: "14px 22px",
               fontSize: "clamp(16px, 4vw, 22px)",
               transform: "translateY(0)",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-1px)";
+              e.currentTarget.style.transform = "translateY(-2px)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "translateY(0)";
