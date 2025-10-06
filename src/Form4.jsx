@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+ import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 
 const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSensOmsHn4N68jWXR6X38PHzZta3TiqypVUPSBM3G3pGfba9Q/viewform?usp=sharing";
 
@@ -133,6 +134,27 @@ export default function Form4() {
             </div>
           </div>
         </div>
+
+        {/* CTA Buttons: Call and WhatsApp */}
+        <div className="mt-6 flex justify-center items-center gap-4 sm:gap-6">
+          <a
+            href="tel:+919842273093"
+            className="flex items-center gap-2 bg-blue-600 text-white font-bold py-3 px-5 sm:px-6 rounded-full shadow-lg transform transition-transform duration-200 hover:scale-110 active:scale-100"
+          >
+            <FaPhoneAlt size="1.2em" />
+            <span className="text-base sm:text-lg">Call</span>
+          </a>
+          <a
+            href="https://wa.me/919842273093"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-green-500 text-white font-bold py-3 px-5 sm:px-6 rounded-full shadow-lg transform transition-transform duration-200 hover:scale-110 active:scale-100"
+          >
+            <FaWhatsapp size="1.4em" />
+            <span className="text-base sm:text-lg">WhatsApp</span>
+          </a>
+        </div>
+
       </div>
       
       {/* Mobile-only: simple underlined links */}
