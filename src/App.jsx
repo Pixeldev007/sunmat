@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "./Home.jsx";
 import Privacy from "./Privacy.jsx";
@@ -12,11 +12,17 @@ import Form5 from "./Form5.jsx";
 
 function App() {
   const location = useLocation();
+  const isFirstLoadRef = useRef(true);
 
   useEffect(() => {
-    if (location.pathname !== '/form2' && window.fbq) {
-      window.fbq('track', 'PageView');
+    if (!window.fbq) return;
+    // Skip initial load because index.html already fired PageView
+    if (isFirstLoadRef.current) {
+      isFirstLoadRef.current = false;
+      return;
     }
+    // Track virtual pageviews on subsequent route changes
+    window.fbq('track', 'PageView');
   }, [location.pathname]);
 
   return (
