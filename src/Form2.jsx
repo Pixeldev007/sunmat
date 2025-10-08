@@ -36,7 +36,7 @@ export default function Form2() {
         const body = await res.json().catch(() => ({}));
         throw new Error(body.error || 'Request failed');
       }
-      setQfMsg("Saved! We will contact you shortly.");
+      setQfMsg("Saved! We will contact you shortly. <br> Kindly fill the Google Form for more details. <br>");
       if (window.fbq) {
         window.fbq('trackCustom', 'QuickFill', { page: 'Form2' });
       }
