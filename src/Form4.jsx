@@ -116,9 +116,9 @@ export default function Form4() {
           }}
         >
           1.உங்களுக்கு பொருத்தமான வரன்களை தேர்ந்தெடுத்து வரன் வீட்டாரிடம் பேசி, 
-          பொருத்தமான 15 வரன் விபரங்களை போன் நம்பருடன் தபால் மூலம் அனுப்புகிறோம்.
+          பொருத்தமான 12 வரன் விபரங்களை போன் நம்பருடன் தபால் மூலம் அனுப்புகிறோம்.
           <br />
-          2.வரன்களை தபாலில் பெற்றபின் தபால்காரரிடம் ரூ 800 [COD] செலுத்தினால் போதும்.
+          2.வரன்களை தபாலில் பெற்றபின் தபால்காரரிடம் ரூ 700 [COD] செலுத்தினால் போதும்.
         </p>
 
         <div className="mt-6 sm:mt-8">
@@ -138,14 +138,14 @@ export default function Form4() {
         {/* CTA Buttons: Call and WhatsApp */}
         <div className="mt-6 flex justify-center items-center gap-4 sm:gap-6">
           <a
-            href="tel:+919842273093"
+            href="tel:+916379399175"
             className="flex items-center gap-2 bg-blue-600 text-white font-bold py-3 px-5 sm:px-6 rounded-full shadow-lg transform transition-transform duration-200 hover:scale-110 active:scale-100"
           >
             <FaPhoneAlt size="1.2em" />
             <span className="text-base sm:text-lg">Call</span>
           </a>
           <a
-            href="https://wa.me/919842273093"
+            href="https://wa.me/918640090400"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-green-500 text-white font-bold py-3 px-5 sm:px-6 rounded-full shadow-lg transform transition-transform duration-200 hover:scale-110 active:scale-100"
