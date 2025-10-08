@@ -22,7 +22,7 @@ export default function Form2() {
     const digits = trimmed.replace(/\D/g, "");
     const isValid = /^\d{10}$/.test(digits);
     if (!isValid) {
-      setQfMsg("Please enter a valid 10-digit phone number.");
+      setQfMsg("Please enter a valid 10-digit phone number");
       return false;
     }
     try {
@@ -36,7 +36,7 @@ export default function Form2() {
         const body = await res.json().catch(() => ({}));
         throw new Error(body.error || 'Request failed');
       }
-      setQfMsg("Saved! We will contact you shortly. <br> Kindly fill the Google Form for more details. <br>");
+      setQfMsg("Saved! We will contact you shortly.Kindly fill the Google Form for more details.");
       if (window.fbq) {
         window.fbq('trackCustom', 'QuickFill', { page: 'Form2' });
       }
@@ -191,9 +191,9 @@ export default function Form2() {
           }}
         >
           1.உங்களுக்கு பொருத்தமான வரன்களை தேர்ந்தெடுத்து வரன் வீட்டாரிடம் பேசி, 
-          பொருத்தமான 12 வரன் விபரங்களை போன் நம்பருடன் தபால் மூலம் அனுப்புகிறோம்.
+          பொருத்தமான <strong style={{ fontSize: "22px" }}>12</strong> வரன் விபரங்களை போன் நம்பருடன் தபால் மூலம் அனுப்புகிறோம்.
           <br />
-          2.வரன்களை தபாலில் பெற்றபின் தபால்காரரிடம் ரூ 700 [COD] செலுத்தினால் போதும்.
+          2.வரன்களை தபாலில் பெற்றபின் தபால்காரரிடம் ரூ <strong style={{ fontSize: "22px" }}>700</strong> [COD] செலுத்தினால் போதும்.
         </p>
 
         <div className="mt-6 sm:mt-8">

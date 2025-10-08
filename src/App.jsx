@@ -25,6 +25,11 @@ function App() {
     window.fbq('track', 'PageView');
   }, [location.pathname]);
 
+  // Always scroll to top on route change so pages start at the title, not mid-way
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [location.pathname]);
+
   return (
     <div className="min-h-screen flex flex-col" style={{
       background: "linear-gradient(135deg, #ff8a00 0%, #ffc107 50%, #ffe082 100%)",
