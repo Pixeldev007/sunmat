@@ -8,9 +8,9 @@ const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeQ0-IQ0-xjjrwITG91jm
 export default function Form1() {
   const openForm = () => {
     if (window.fbq) {
-      window.fbq('track', 'Lead');
-      window.fbq('trackCustom', 'RegisterCTAClick', { page: 'Form1', value: 800.00, currency: 'INR' });
-      window.fbq('track', 'Purchase', { value: 800.00, currency: 'INR' });
+      window.fbq('trackSingle', '1864312051151382', 'Lead');
+      window.fbq('trackSingleCustom', '1864312051151382', 'RegisterCTAClick', { page: 'Form1', value: 800.00, currency: 'INR' });
+      window.fbq('trackSingle', '1864312051151382', 'Purchase', { value: 800.00, currency: 'INR' });
     }
     window.open(FORM_URL, "_blank", "noopener,noreferrer");
   };

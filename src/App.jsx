@@ -16,13 +16,18 @@ function App() {
 
   useEffect(() => {
     if (!window.fbq) return;
-    // Skip initial load because index.html already fired PageView
+    // Skip initial load because index.html may have fired PageView
     if (isFirstLoadRef.current) {
       isFirstLoadRef.current = false;
       return;
     }
-    // Track virtual pageviews on subsequent route changes
-    window.fbq('track', 'PageView');
+    // Fire virtual PageView to the correct pixel ID
+    const path = location.pathname;
+    if (path === '/form2') {
+      window.fbq('trackSingle', '2082411969167840', 'PageView');
+    } else {
+      window.fbq('trackSingle', '1864312051151382', 'PageView');
+    }
   }, [location.pathname]);
 
   // Always scroll to top on route change so pages start at the title, not mid-way

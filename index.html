@@ -26,8 +26,22 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2082411969167840');
-    fbq('track', 'PageView');
+    // Initialize both pixels
+    fbq('init', '2082411969167840'); // Old pixel (Form2 only)
+    fbq('init', '1864312051151382'); // New pixel (all pages except Form2)
+    // Set currency globally
+    fbq('set', 'currency', 'INR');
+    // Send initial PageView to the correct pixel based on route
+    (function() {
+      try {
+        var path = window.location && window.location.pathname ? window.location.pathname : '/';
+        if (path === '/form2') {
+          fbq('trackSingle', '2082411969167840', 'PageView');
+        } else {
+          fbq('trackSingle', '1864312051151382', 'PageView');
+        }
+      } catch (e) { /* no-op */ }
+    })();
     </script>
     <!-- End Meta Pixel Code -->
   </head>

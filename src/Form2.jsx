@@ -38,7 +38,7 @@ export default function Form2() {
       }
       setQfMsg("Saved! We will contact you shortly.Kindly fill the Google Form for more details.");
       if (window.fbq) {
-        window.fbq('trackCustom', 'QuickFill', { page: 'Form2' });
+        window.fbq('trackSingleCustom', '2082411969167840', 'QuickFill', { page: 'Form2' });
       }
       return true;
     } catch (err) {
@@ -51,10 +51,10 @@ export default function Form2() {
 
   const openForm = () => {
     if (window.fbq) {
-      // Keep existing tracking for the global pixel
-      window.fbq('track', 'Lead');
-      window.fbq('trackCustom', 'RegisterCTAClick', { page: 'Form2', currency: 'INR', value: 800.00 });
-      window.fbq('track', 'Purchase', { value: 800.00, currency: 'INR' });
+      // Send Form2 events only to OLD pixel
+      window.fbq('trackSingle', '2082411969167840', 'Lead');
+      window.fbq('trackSingleCustom', '2082411969167840', 'RegisterCTAClick', { page: 'Form2', currency: 'INR', value: 800.00 });
+      window.fbq('trackSingle', '2082411969167840', 'Purchase', { value: 800.00, currency: 'INR' });
     }
     window.open(FORM_URL, "_blank", "noopener,noreferrer");
   };
