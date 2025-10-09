@@ -7,6 +7,18 @@ const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeQ0-IQ0-xjjrwITG91jm
 
 export default function Form1() {
   const openForm = () => {
+    // Prevent duplicate firing within 1.5s
+    if (window.__regFiring) return;
+    window.__regFiring = true;
+    setTimeout(() => { window.__regFiring = false; }, 1500);
+
+    // Dedupe identical events within 1s
+    window.__fbqLast = window.__fbqLast || {};
+    const now = Date.now();
+    const key = 'Form1';
+    if (window.__fbqLast[key] && now - window.__fbqLast[key] < 1000) return;
+    window.__fbqLast[key] = now;
+
     if (window.fbq) {
       window.fbq('trackSingle', '1864312051151382', 'Lead');
       window.fbq('trackSingleCustom', '1864312051151382', 'RegisterCTAClick', { page: 'Form1', value: 800.00, currency: 'INR' });

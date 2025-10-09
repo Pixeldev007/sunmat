@@ -6,6 +6,11 @@ const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdJ1Z_3ro-65crWt3o9sP
 
 export default function Home() {
   const openForm = () => {
+    // Prevent duplicate firing within 1.5s (guards against double-invoked handlers)
+    if (window.__regFiring) return;
+    window.__regFiring = true;
+    setTimeout(() => { window.__regFiring = false; }, 1500);
+
     if (window.fbq) {
       window.fbq('trackSingle', '1864312051151382', 'Lead');
       window.fbq('trackSingleCustom', '1864312051151382', 'RegisterCTAClick', { page: 'Home', value: 800.00, currency: 'INR' });
