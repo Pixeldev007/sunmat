@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "./Home.jsx";
 import Privacy from "./Privacy.jsx";
@@ -12,21 +12,33 @@ import Form5 from "./Form5.jsx";
 
 function App() {
   const location = useLocation();
-  const isFirstLoadRef = useRef(true);
 
   useEffect(() => {
-    if (!window.fbq) return;
-    // Skip initial load because index.html may have fired PageView
-    if (isFirstLoadRef.current) {
-      isFirstLoadRef.current = false;
-      return;
+    const OLD_PIXEL = '2082411969167840';
+    const NEW_PIXEL = '1864312051151382';
+
+    // Normalize path: remove any trailing slashes except root
+    const rawPath = location.pathname || '/';
+    const path = rawPath.length > 1 ? rawPath.replace(/\/+$/, '') : rawPath;
+    const isForm2 = path === '/form2' || path.startsWith('/form2/');
+    const targetPixel = isForm2 ? OLD_PIXEL : NEW_PIXEL;
+
+    function initAndTrack() {
+      if (!window.fbq) return false;
+      window.__initedPixels = window.__initedPixels || {};
+      if (!window.__initedPixels[targetPixel]) {
+        window.fbq('init', targetPixel);
+        window.fbq('set', 'currency', 'INR');
+        window.__initedPixels[targetPixel] = true;
+      }
+      window.fbq('trackSingle', targetPixel, 'PageView');
+      return true;
     }
-    // Fire virtual PageView to the correct pixel ID
-    const path = location.pathname;
-    if (path === '/form2') {
-      window.fbq('trackSingle', '2082411969167840', 'PageView');
-    } else {
-      window.fbq('trackSingle', '1864312051151382', 'PageView');
+
+    // Try immediately, then retry shortly if fbq isn't ready yet
+    if (!initAndTrack()) {
+      const id = setTimeout(() => { initAndTrack(); }, 150);
+      return () => clearTimeout(id);
     }
   }, [location.pathname]);
 

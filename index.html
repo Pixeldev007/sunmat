@@ -26,31 +26,11 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    // Initialize both pixels
-    fbq('init', '2082411969167840'); // Old pixel (Form2 only)
-    fbq('init', '1864312051151382'); // New pixel (all pages except Form2)
-    // Set currency globally
-    fbq('set', 'currency', 'INR');
-    // Send initial PageView to the correct pixel based on route
-    (function() {
-      try {
-        var path = window.location && window.location.pathname ? window.location.pathname : '/';
-        if (path === '/form2') {
-          fbq('trackSingle', '2082411969167840', 'PageView');
-        } else {
-          fbq('trackSingle', '1864312051151382', 'PageView');
-        }
-      } catch (e) { /* no-op */ }
-    })();
+    // Pixel initialization is handled in the app per route
     </script>
     <!-- End Meta Pixel Code -->
   </head>
   <body>
-    <!-- Meta Pixel Code (noscript) -->
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=2082411969167840&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code (noscript) -->
     <div id="root"></div>
     <!-- Removed test button per request; Meta Pixel remains active globally -->
     <script type="module" src="/src/main.jsx"></script>
