@@ -12,9 +12,8 @@ export default function Home() {
     setTimeout(() => { window.__regFiring = false; }, 1500);
 
     if (window.fbq) {
-      window.fbq('trackSingle', '1864312051151382', 'Lead');
+      // Only fire custom Register CTA click. PageView is handled in App.jsx.
       window.fbq('trackSingleCustom', '1864312051151382', 'RegisterCTAClick', { page: 'Home', value: 800.00, currency: 'INR' });
-      window.fbq('trackSingle', '1864312051151382', 'Purchase', { value: 800.00, currency: 'INR' });
     }
     window.open(FORM_URL, "_blank", "noopener,noreferrer");
   };

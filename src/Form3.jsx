@@ -7,9 +7,8 @@ const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScmMcskhgWsTMgHQivvbH
 export default function Form3() {
   const openForm = () => {
     if (window.fbq) {
-      window.fbq('trackSingle', '1864312051151382', 'Lead');
+      // Fire only Register CTA click to the NEW pixel. PageView is tracked in App.jsx
       window.fbq('trackSingleCustom', '1864312051151382', 'RegisterCTAClick', { page: 'Form3', currency: 'INR', value: 800.00 });
-      window.fbq('trackSingle', '1864312051151382', 'Purchase', { value: 800.00, currency: 'INR' });
     }
     window.open(FORM_URL, "_blank", "noopener,noreferrer");
   };

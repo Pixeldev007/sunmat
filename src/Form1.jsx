@@ -20,9 +20,8 @@ export default function Form1() {
     window.__fbqLast[key] = now;
 
     if (window.fbq) {
-      window.fbq('trackSingle', '1864312051151382', 'Lead');
+      // Only send Register CTA click to the new pixel. PageView handled globally.
       window.fbq('trackSingleCustom', '1864312051151382', 'RegisterCTAClick', { page: 'Form1', value: 800.00, currency: 'INR' });
-      window.fbq('trackSingle', '1864312051151382', 'Purchase', { value: 800.00, currency: 'INR' });
     }
     window.open(FORM_URL, "_blank", "noopener,noreferrer");
   };
