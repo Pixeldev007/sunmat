@@ -6,10 +6,6 @@ const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf0t5gkg8pvl29bgnXEZm
 
 export default function Form5() {
   const openForm = () => {
-    if (window.fbq) {
-      // Only fire Register CTA click. PageView is tracked centrally in App.jsx
-      window.fbq('trackSingleCustom', '1864312051151382', 'RegisterCTAClick', { page: 'Form5', currency: 'INR', value: 800.00 });
-    }
     window.open(FORM_URL, "_blank", "noopener,noreferrer");
   };
 

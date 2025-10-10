@@ -18,11 +18,6 @@ export default function Form1() {
     const key = 'Form1';
     if (window.__fbqLast[key] && now - window.__fbqLast[key] < 1000) return;
     window.__fbqLast[key] = now;
-
-    if (window.fbq) {
-      // Only send Register CTA click to the new pixel. PageView handled globally.
-      window.fbq('trackSingleCustom', '1864312051151382', 'RegisterCTAClick', { page: 'Form1', value: 800.00, currency: 'INR' });
-    }
     window.open(FORM_URL, "_blank", "noopener,noreferrer");
   };
 

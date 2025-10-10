@@ -6,10 +6,6 @@ const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSensOmsHn4N68jWXR6X38
 
 export default function Form4() {
   const openForm = () => {
-    if (window.fbq) {
-      // Only fire Register CTA click to the NEW pixel. PageView is sent in App.jsx.
-      window.fbq('trackSingleCustom', '1864312051151382', 'RegisterCTAClick', { page: 'Form4', currency: 'INR', value: 800.00 });
-    }
     window.open(FORM_URL, "_blank", "noopener,noreferrer");
   };
 

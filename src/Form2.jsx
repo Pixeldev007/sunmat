@@ -52,9 +52,7 @@ export default function Form2() {
   const openForm = () => {
     if (window.fbq) {
       // Send Form2 events only to OLD pixel
-      window.fbq('trackSingle', '2082411969167840', 'Lead');
-      window.fbq('trackSingleCustom', '2082411969167840', 'RegisterCTAClick', { page: 'Form2', currency: 'INR', value: 800.00 });
-      window.fbq('trackSingle', '2082411969167840', 'Purchase', { value: 800.00, currency: 'INR' });
+      window.fbq('trackSingleCustom', '2082411969167840', 'RegisterCTAClick', { page: 'Form2', currency: 'INR' });
     }
     window.open(FORM_URL, "_blank", "noopener,noreferrer");
   };

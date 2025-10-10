@@ -20,7 +20,12 @@ function App() {
     // Normalize path: remove any trailing slashes except root
     const rawPath = location.pathname || '/';
     const path = rawPath.length > 1 ? rawPath.replace(/\/+$/, '') : rawPath;
+    const isHome = path === '/';
     const isForm2 = path === '/form2' || path.startsWith('/form2/');
+    // Only fire on Home and Form2
+    if (!isHome && !isForm2) {
+      return;
+    }
     const targetPixel = isForm2 ? OLD_PIXEL : NEW_PIXEL;
 
     function initAndTrack() {
