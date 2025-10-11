@@ -9,6 +9,7 @@ import Form2 from "./Form2.jsx";
 import Form3 from "./Form3.jsx";
 import Form4 from "./Form4.jsx";
 import Form5 from "./Form5.jsx";
+import Form6 from "./Form6.jsx";
 
 function App() {
   const location = useLocation();
@@ -64,6 +65,7 @@ function App() {
           <Route path="/form3" element={<Form3 />} />
           <Route path="/form4" element={<Form4 />} />
           <Route path="/form5" element={<Form5 />} />
+          <Route path="/form6" element={<Form6 />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/contact" element={<Contact />} />

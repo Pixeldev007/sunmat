@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaPhoneAlt, FaWhatsapp } from 'react-icons/fa';
 
-const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdJ1Z_3ro-65crWt3o9sP-E613A31IhB_Rgimg0wKgVQ89ZRQ/viewform?usp=dialog";
+// Google Form URL for Form6 (provided by user)
+const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfad5lMAIvshMEXAYijT1ITFkNbXOQwylG3TPM5TfrrAwbFwA/viewform?usp=sharing&ouid=116138926276057289292";
 
-export default function Home() {
+export default function Form6() {
   const openForm = () => {
     // Prevent duplicate firing within 1.5s (guards against double-invoked handlers)
     if (window.__regFiring) return;
@@ -13,7 +14,7 @@ export default function Home() {
 
     if (window.fbq) {
       // Only fire custom Register CTA click. PageView is handled in App.jsx.
-      window.fbq('trackSingleCustom', '1864312051151382', 'RegisterCTAClick', { page: 'Home', value: 800.00, currency: 'INR' });
+      window.fbq('trackSingleCustom', '1864312051151382', 'RegisterCTAClick', { page: 'Form6', value: 800.00, currency: 'INR' });
     }
     window.open(FORM_URL, "_blank", "noopener,noreferrer");
   };
