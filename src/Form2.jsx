@@ -37,10 +37,6 @@ export default function Form2() {
         throw new Error(body.error || 'Request failed');
       }
       setQfMsg("Saved! We will contact you shortly.Kindly fill the Google Form for more details.");
-      // Track official Lead after successful save
-      if (window.fbq) {
-        window.fbq('trackSingle', '2082411969167840', 'Lead', { page: 'Form2' });
-      }
       return true;
     } catch (err) {
       setQfMsg("Could not save right now. Please try again.");
