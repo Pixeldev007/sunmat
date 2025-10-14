@@ -15,7 +15,7 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    const OLD_PIXEL = '2082411969167840';
+    const OLD_PIXEL = '1310288920332565';
     const NEW_PIXEL = '1864312051151382';
 
     // Normalize path: remove any trailing slashes except root

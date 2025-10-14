@@ -55,7 +55,7 @@ export default function Form2() {
     const trimmed = (phone || '').trim();
     const digits = trimmed.replace(/\D/g, '');
     if (/^\d{10}$/.test(digits) && window.fbq) {
-      window.fbq('trackSingleCustom', '2082411969167840', 'RegisterCTAClick', { page: 'Form2', currency: 'INR' });
+      window.fbq('trackSingleCustom', '1310288920332565', 'RegisterCTAClick', { page: 'Form2', currency: 'INR' });
     }
     // Save phone; if invalid/missing, do not proceed
     const ok = await savePhoneIfValid();
