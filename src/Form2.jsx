@@ -37,8 +37,9 @@ export default function Form2() {
         throw new Error(body.error || 'Request failed');
       }
       setQfMsg("Saved! We will contact you shortly.Kindly fill the Google Form for more details.");
+      // Track official Lead after successful save
       if (window.fbq) {
-        window.fbq('trackSingleCustom', '2082411969167840', 'QuickFill', { page: 'Form2' });
+        window.fbq('trackSingle', '2082411969167840', 'Lead', { page: 'Form2' });
       }
       return true;
     } catch (err) {
@@ -50,14 +51,16 @@ export default function Form2() {
   };
 
   const openForm = () => {
-    if (window.fbq) {
-      // Send Form2 events only to OLD pixel
-      window.fbq('trackSingleCustom', '2082411969167840', 'RegisterCTAClick', { page: 'Form2', currency: 'INR' });
-    }
     window.open(FORM_URL, "_blank", "noopener,noreferrer");
   };
 
   const handleRegister = async () => {
+    // Count button press only if a valid 10-digit phone is present
+    const trimmed = (phone || '').trim();
+    const digits = trimmed.replace(/\D/g, '');
+    if (/^\d{10}$/.test(digits) && window.fbq) {
+      window.fbq('trackSingleCustom', '2082411969167840', 'RegisterCTAClick', { page: 'Form2', currency: 'INR' });
+    }
     // Save phone; if invalid/missing, do not proceed
     const ok = await savePhoneIfValid();
     if (!ok) return;
