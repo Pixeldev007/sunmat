@@ -37,11 +37,11 @@ function App() {
         window.fbq('set', 'currency', 'INR');
         window.__initedPixels[targetPixel] = true;
       }
-      // Disable Meta automatic events (like automatic button click detection) on Form2 only
+      // Ensure Meta automatic events are enabled on Form2 so Event Setup Tool can detect them
       if (isForm2) {
         try {
-          window.fbq('set', 'autoConfig', false, targetPixel);
-          window.fbq('set', 'eventAutoConfig', false, targetPixel);
+          window.fbq('set', 'autoConfig', true, targetPixel);
+          window.fbq('set', 'eventAutoConfig', true, targetPixel);
         } catch (_) {}
       }
       window.fbq('trackSingle', targetPixel, 'PageView');
