@@ -15,7 +15,7 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    const FORM2_PIXEL = '2082411969167840';
+    const FORM2_PIXEL = '805178675775448';
     const HOME_PIXEL = '1864312051151382';
 
     // Normalize path: remove any trailing slashes except root

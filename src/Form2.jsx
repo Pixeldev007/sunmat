@@ -57,7 +57,7 @@ export default function Form2() {
 
     // 2) After successful save, fire Form2 pixel events
     if (window.fbq) {
-      const PIXEL = '2082411969167840';
+      const PIXEL = '805178675775448';
       const EVENT_VALUE = 700; // numeric value
       window.fbq('trackSingleCustom', PIXEL, 'RegisterCTAClick', { page: 'Form2', value: EVENT_VALUE, currency: 'INR' });
       window.fbq('trackSingle', PIXEL, 'CompleteRegistration');
@@ -256,7 +256,7 @@ export default function Form2() {
 
       {/* Form2-only noscript fallback for Meta Pixel PageView */}
       <noscript>
-        <img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=2082411969167840&ev=PageView&noscript=1" alt="" />
+        <img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=805178675775448&ev=PageView&noscript=1" alt="" />
       </noscript>
     </div>
   );
