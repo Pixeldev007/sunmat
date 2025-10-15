@@ -51,17 +51,16 @@ export default function Form2() {
   };
 
   const handleRegister = async () => {
-    // Count button press only if a valid 10-digit phone is present
-    const trimmed = (phone || '').trim();
-    const digits = trimmed.replace(/\D/g, '');
+    // 1) Save phone first; if invalid/missing, do NOT fire pixels or open form
+    const ok = await savePhoneIfValid();
+    if (!ok) return;
+
+    // 2) After successful save, fire Form2 pixel events
     if (window.fbq) {
       const PIXEL = '2082411969167840';
       window.fbq('trackSingleCustom', PIXEL, 'RegisterCTAClick', { page: 'Form2', value: 800.00, currency: 'INR' });
       window.fbq('trackSingle', PIXEL, 'CompleteRegistration');
     }
-    // Save phone; if invalid/missing, do not proceed
-    const ok = await savePhoneIfValid();
-    if (!ok) return;
     // After showing success, open the Google Form after 2 seconds
     setTimeout(() => {
       openForm();

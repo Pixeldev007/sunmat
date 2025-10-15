@@ -41,11 +41,17 @@ function App() {
       return true;
     }
 
-    // Try immediately, then retry shortly if fbq isn't ready yet
-    if (!initAndTrack()) {
-      const id = setTimeout(() => { initAndTrack(); }, 150);
-      return () => clearTimeout(id);
-    }
+    // Try immediately; if fbq isn't ready, retry for up to ~2s
+    if (initAndTrack()) return;
+    let attempts = 0;
+    const maxAttempts = 10; // 10 * 200ms = 2s
+    const intervalId = setInterval(() => {
+      attempts += 1;
+      if (initAndTrack() || attempts >= maxAttempts) {
+        clearInterval(intervalId);
+      }
+    }, 200);
+    return () => clearInterval(intervalId);
   }, [location.pathname]);
 
   // Always scroll to top on route change so pages start at the title, not mid-way
