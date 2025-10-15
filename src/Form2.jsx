@@ -54,10 +54,10 @@ export default function Form2() {
     // Count button press only if a valid 10-digit phone is present
     const trimmed = (phone || '').trim();
     const digits = trimmed.replace(/\D/g, '');
-    if (/^\d{10}$/.test(digits) && window.fbq) {
+    if (window.fbq) {
       const PIXEL = '2082411969167840';
-      window.fbq('trackSingleCustom', PIXEL, 'RegisterCTAClick', { page: 'Form2', currency: 'INR' });
-      window.fbq('trackSingle', PIXEL, 'Lead');
+      window.fbq('trackSingleCustom', PIXEL, 'RegisterCTAClick', { page: 'Form2', value: 800.00, currency: 'INR' });
+      window.fbq('trackSingle', PIXEL, 'CompleteRegistration');
     }
     // Save phone; if invalid/missing, do not proceed
     const ok = await savePhoneIfValid();

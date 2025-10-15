@@ -11,11 +11,6 @@ export default function Form6() {
     if (window.__regFiring) return;
     window.__regFiring = true;
     setTimeout(() => { window.__regFiring = false; }, 1500);
-
-    if (window.fbq) {
-      // Only fire custom Register CTA click. PageView is handled in App.jsx.
-      window.fbq('trackSingleCustom', '1864312051151382', 'RegisterCTAClick', { page: 'Form6', value: 800.00, currency: 'INR' });
-    }
     window.open(FORM_URL, "_blank", "noopener,noreferrer");
   };
 
