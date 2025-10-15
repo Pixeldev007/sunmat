@@ -37,6 +37,13 @@ function App() {
         window.fbq('set', 'currency', 'INR');
         window.__initedPixels[targetPixel] = true;
       }
+      // Disable Meta automatic events (like automatic button click detection) on Form2 only
+      if (isForm2) {
+        try {
+          window.fbq('set', 'autoConfig', false, targetPixel);
+          window.fbq('set', 'eventAutoConfig', false, targetPixel);
+        } catch (_) {}
+      }
       window.fbq('trackSingle', targetPixel, 'PageView');
       return true;
     }
