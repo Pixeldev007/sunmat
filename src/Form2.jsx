@@ -55,7 +55,9 @@ export default function Form2() {
     const trimmed = (phone || '').trim();
     const digits = trimmed.replace(/\D/g, '');
     if (/^\d{10}$/.test(digits) && window.fbq) {
-      window.fbq('trackSingleCustom', '1310288920332565', 'RegisterCTAClick', { page: 'Form2', currency: 'INR' });
+      const PIXEL = '2082411969167840';
+      window.fbq('trackSingleCustom', PIXEL, 'RegisterCTAClick', { page: 'Form2', currency: 'INR' });
+      window.fbq('trackSingle', PIXEL, 'Lead');
     }
     // Save phone; if invalid/missing, do not proceed
     const ok = await savePhoneIfValid();
@@ -251,6 +253,11 @@ export default function Form2() {
           </Link>
         </div>
       </div>
+
+      {/* Form2-only noscript fallback for Meta Pixel PageView */}
+      <noscript>
+        <img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=2082411969167840&ev=PageView&noscript=1" alt="" />
+      </noscript>
     </div>
   );
 }

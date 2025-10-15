@@ -15,8 +15,8 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    const OLD_PIXEL = '1310288920332565';
-    const NEW_PIXEL = '1864312051151382';
+    const FORM2_PIXEL = '2082411969167840';
+    const HOME_PIXEL = '1864312051151382';
 
     // Normalize path: remove any trailing slashes except root
     const rawPath = location.pathname || '/';
@@ -27,7 +27,7 @@ function App() {
     if (!isHome && !isForm2) {
       return;
     }
-    const targetPixel = isForm2 ? OLD_PIXEL : NEW_PIXEL;
+    const targetPixel = isForm2 ? FORM2_PIXEL : HOME_PIXEL;
 
     function initAndTrack() {
       if (!window.fbq) return false;
