@@ -58,7 +58,8 @@ export default function Form2() {
     // 2) After successful save, fire Form2 pixel events
     if (window.fbq) {
       const PIXEL = '2082411969167840';
-      window.fbq('trackSingleCustom', PIXEL, 'RegisterCTAClick', { page: 'Form2', value: 800.00, currency: 'INR' });
+      const EVENT_VALUE = 700; // numeric value
+      window.fbq('trackSingleCustom', PIXEL, 'RegisterCTAClick', { page: 'Form2', value: EVENT_VALUE, currency: 'INR' });
       window.fbq('trackSingle', PIXEL, 'CompleteRegistration');
     }
     // After showing success, open the Google Form after 2 seconds
