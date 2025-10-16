@@ -60,7 +60,6 @@ export default function Form2() {
       const PIXEL = '805178675775448';
       const EVENT_VALUE = 700; // numeric value
       window.fbq('trackSingleCustom', PIXEL, 'RegisterCTAClick', { page: 'Form2', value: EVENT_VALUE, currency: 'INR' });
-      window.fbq('trackSingle', PIXEL, 'CompleteRegistration');
     }
     // After showing success, open the Google Form after 2 seconds
     setTimeout(() => {
