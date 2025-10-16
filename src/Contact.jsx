@@ -31,8 +31,8 @@ export default function Contact() {
           <div className="mt-2 space-y-1">
             <a href="tel:+919342097057" className="block text-xl md:text-2xl font-extrabold hover:underline" aria-label="Call +91 93420 97057">+91 93420 97057</a>
             <a href="tel:+916379399175" className="block text-xl md:text-2xl font-extrabold hover:underline" aria-label="Call +91 63793 99175">+91 63793 99175</a>
-            <a href="tel:+918148653302" className="block text-xl md:text-2xl font-extrabold hover:underline" aria-label="Call +91 81486 53302">+91 81486 53302</a>
-            <a href="tel:+919994275366" className="block text-xl md:text-2xl font-extrabold hover:underline" aria-label="Call +91 99942 75366">+91 99942 75366</a>
+            <a href="tel:+919047179211" className="block text-xl md:text-2xl font-extrabold hover:underline" aria-label="Call +91 90471 79211">+91 90471 79211</a>
+            <a href="tel:+918640090400" className="block text-xl md:text-2xl font-extrabold hover:underline" aria-label="Call +91 86400 90400">+91 86400 90400</a>
             <a href="tel:+919842273093" className="block text-xl md:text-2xl font-extrabold hover:underline" aria-label="Call +91 98422 73093">+91 98422 73093</a>
             <a href="tel:+919791781651" className="block text-xl md:text-2xl font-extrabold hover:underline" aria-label="Call +91 97917 81651">+91 97917 81651</a>
           </div>

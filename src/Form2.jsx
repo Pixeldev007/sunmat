@@ -109,7 +109,7 @@ export default function Form2() {
         >
           Sun Matrimony
           <br />
-          <span style={{ color: "#1e40af", fontSize: "clamp(lam, 4.5vw, 36px)" }}>சன் மேட்ரிமோணி</span>
+          <span style={{ color: "#1e40af", fontSize: "clamp(lam, 4.5vw, 36px)" }}>சன் மேட்ரிமோனி </span>
           <br />
           <span style={{ color: "#b91c1c", fontSize: "clamp(16px, 4vw, 32px)" }}>[அனைத்து சமூகத்திற்கும்]</span>
         </h1>
@@ -201,8 +201,8 @@ export default function Form2() {
             <div className="mt-2 grid grid-cols-2 sm:grid-cols-2 gap-2 sm:gap-3 text-sm sm:text-xl md:text-2xl font-extrabold">
               <div className="whitespace-nowrap">+91 93420 97057</div>
               <div className="whitespace-nowrap">+91 63793 99175</div>
-              <div className="whitespace-nowrap">+91 81486 53302</div>
-              <div className="whitespace-nowrap">+91 99942 75366</div>
+              <div className="whitespace-nowrap">+91 90471 79211</div>
+              <div className="whitespace-nowrap">+91 86400 90400</div>
               <div className="whitespace-nowrap">+91 98422 73093</div>
               <div className="whitespace-nowrap">+91 97917 81651</div>
             </div>
