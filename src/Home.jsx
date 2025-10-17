@@ -13,7 +13,7 @@ export default function Home() {
 
     if (window.fbq) {
       // Only fire custom Register CTA click. PageView is handled in App.jsx.
-      window.fbq('trackSingleCustom', '1864312051151382', 'RegisterCTAClick', { page: 'Home', value: 800.00, currency: 'INR' });
+      window.fbq('trackSingleCustom', '1864312051151382', 'RegisterCTAClick', { page: 'Home', value: 700.00, currency: 'INR' });
     }
     window.open(FORM_URL, "_blank", "noopener,noreferrer");
   };
